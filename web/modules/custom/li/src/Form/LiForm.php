@@ -226,7 +226,7 @@ class LiForm extends FormBase {
           }
           // Check all other rows.
           if ($row <= $this->countR[$min]) {
-            // Assigning a filled valueю
+            // Assigning a filled value.
             if (!$value && !$empty && $i !== "") {
               $value = 1;
             }
@@ -244,12 +244,12 @@ class LiForm extends FormBase {
             if ($value && $empty && $i !== "") {
               $form_state->setErrorByName("", 'Invalid');
               break 3;
-            } 
+            }
           }
             end:
         }
       }
-    } 
+    }
   }
   
   /**
