@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Install, create tables to store reviews.
+ */
+
+
+/**
+ * Implements hook_schema().
+ */
+
+function li_schema(): array{
+    $schema['li'] = array (
+        'description'=>'database guest book',
+        'fields' => [
+            'id' => [
+              'type' => 'serial',
+              'not null' => TRUE,
+              'unsigned' => TRUE,
+              'description' => 'Primary key',
+            ],
+            'q1' => [
+                'type' => 'float',
+                'length' => 100,
+                'not null' => TRUE,
+                'description' => 'q1',
+            ],
+            'q2' => [
+                'type' => 'float',
+                'length' => 100,
+                'not null' => TRUE,
+                'description' => 'q2',
+            ],
+            'q3' => [
+                'type' => 'float',
+                'length' => 100,
+                'not null' => TRUE,
+                'description' => 'q3',
+            ],
+            'q4' => [
+                'type' => 'float',
+                'length' => 100,
+                'not null' => TRUE,
+                'description' => 'q4',
+            ],
+            'ytd' => [
+                'type' => 'float',
+                'length' => 100,
+                'not null' => TRUE,
+                'description' => 'ytd',
+            ],
+            ],
+
+        'primary key' => ['id'],
+    );
+    return $schema;
+}
+/*
+Delete the database table when removing the module
+*/
+function guestbook_uninstall($is_syncing) {
+  $database = Drupal::database();
+  $result = $database->select('li', 'l')
+    ->fields('l', ['q1','q2'])
+    ->execute();
+}

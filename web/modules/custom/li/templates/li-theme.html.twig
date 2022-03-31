@@ -1,0 +1,39 @@
+{{ form }}
+
+{% if reviews['table']['#rows'] %}
+  <div style="height: auto;">
+    <table style="height: auto;" {{ attributes.addClass('table') }}>
+      {% if reviews['table']['#header'] %}
+        <thead>
+          <tr>
+            {% for cell in reviews['table']['#header'] %}
+              <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+        </thead>
+      {% endif %}
+
+      <tbody>
+        {% for row in reviews['table']['#rows'] %}
+          {% set row_classes = [
+            not no_striping ? cycle(['odd', 'even'], loop.index0),
+          ] %}
+          <tr{{ row.attributes.addClass(row_classes) }}>
+            <td class="q1">{{ row['q1']}} </td>
+            <td class="q2">{{ row['q2']}} </td>
+            <td class="q3">{{ row['q3']}} </td>
+            <td class="q4">{{ row['q4']}} </td>
+            <td class="ytd">{{ row['ytd']}} </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="page-empty" style="margin: 0 auto; text-align: center; opacity: 0.6;">
+  <h1>The page is empty.</h1>
+  <br><h2> No value.</h2>
+  <br><h4>Fill out the form at the link</h4>
+  </div>
+
+{% endif %}

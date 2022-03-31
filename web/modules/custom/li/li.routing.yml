@@ -1,0 +1,23 @@
+li.content:
+  path: '/li'
+  defaults:
+    _title: 'LiForm (Module 4)'
+    _form: 'Drupal\li\Form\LiForm'
+  requirements:
+    _permission: 'access content'
+    
+li.table:
+  path: '/li/table'
+  defaults:
+    _title: 'LiForm (Module 4) - the latest values'
+    _controller: '\Drupal\li\Controller\LiController::build'
+  requirements:
+    _permission: 'access content'
+
+li.settings_form:
+  path: '/admin/config/system/li'
+  defaults:
+    _title: 'li settings'
+    _form: 'Drupal\li\Form\LiForm'
+  requirements:
+    _permission: 'administer li configuration'
