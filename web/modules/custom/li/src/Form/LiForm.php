@@ -151,6 +151,7 @@ class LiForm extends FormBase {
     }
     return $form;
   }
+  
   /**
    * Add a new row to the table.
    *
@@ -171,6 +172,7 @@ class LiForm extends FormBase {
     $form_state->setRebuild();
     return $form;
   }
+  
   /**
    * Add a new table.
    *
@@ -191,6 +193,7 @@ class LiForm extends FormBase {
     $form_state->setRebuild();
     return $form;
   }
+  
   /**
    * Submit Ajax.
    */
@@ -249,7 +252,6 @@ class LiForm extends FormBase {
     } 
   }
   
-
   /**
    * {@inheritdoc}
    */
