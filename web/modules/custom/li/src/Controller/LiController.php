@@ -18,8 +18,7 @@ class LiController extends ControllerBase {
       'q2' => t('q2'),
       'q3' => t('q3'),
       'q4' => t('q4'),
-      'ytd' => t('ytd'),
-      
+      'ytd' => t('ytd'),     
     ];
     $reviews['table'] = [
       '#type' => 'table',
@@ -39,8 +38,8 @@ class LiController extends ControllerBase {
       '#reviews' => $reviews,
       '#text' => $this
         ->t('Hello! You can add here a photo of your cat.'),
-    ]; 
-
+    ];
+    
     return $build;
   }
   /**
